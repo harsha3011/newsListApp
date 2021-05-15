@@ -30,6 +30,7 @@ const App =()=> {
   }
   const [dataArray,setDataarray] = useState([]);
   useEffect(()=>{
+    setLoader(true)
     axios.get(`https://newsapi.org/v2/everything?q=${filterData[filterSelect]}&apiKey=051b4cb654d34757b0cc49026875fdac`)
     .then(res=>{
       setDataarray(res.data.articles);
